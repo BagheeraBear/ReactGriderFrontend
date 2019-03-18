@@ -12,7 +12,7 @@ const App = function() {
       <h1>This is my cool function-Component</h1>
       <p>And som text to show under the header</p>
       <p>Lorem ipsum baby</p>
-      <label class="label" for="name">
+      <label class="label" htmlFor="name">
         {labelText}
       </label>
       <input id="name" type="text" />
