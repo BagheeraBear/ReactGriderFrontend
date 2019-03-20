@@ -1,0 +1,13 @@
+Client code
+You will need to have a Java runtime installed on your machine to run Swagger. To generate client code, you first need to install Swagger Codegen. On macOS, you may use Homebrew:
+
+$ brew install swagger-codegen maven
+To generate code in a given language, run swagger-codegen generate and pass the following parameters:
+
+--input-spec <spec file>: Use https://developers.strava.com/swagger/swagger.json for Strava’s API
+--config <configuration file>: (optional) pass the settings or overrides you want the code generator to honor
+--lang <language>: the target programming language you seek to generate code for (running swagger-codegen by itself will print a list of available languages)
+--output <output directory>: where to write the resulting files
+This example will generate Java code suitable to be packaged in an Android library:
+
+$ swagger-codegen generate -i https://developers.strava.com/swagger/swagger.json -l java -o generated/java
