@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import SeasonDisplay from './SeasonDisplay';
 
 // into classBased prototypal inheritance
 
 class App extends React.Component {
   // constructor, first called instantly before anything else
   // super - a reference to the parents contructor-function
-  constructor(props) {
-    super(props);
     // only time we make a direct assignment!
-    this.state = { latitude: null, errorMessage: "" };
+    state = { latitude: null, errorMessage: "" };
 
+  componentDidMount(){
     window.navigator.geolocation.getCurrentPosition(
       position => {
         // we called setState!!
@@ -22,14 +22,10 @@ class App extends React.Component {
     );
   }
 
-  componentDidMount(){
-    console.log('My component rendered to the screen');
-  }
+  // componentDidUpdate(){
+  //   console.log('My component was updated - it re-rendered');
+  // }
 
-  componentDidUpdate(){
-    console.log('My component was updated - it re-rendered');
-    
-  }
   // React says we have to define render()
   render() {
     // update state > immediate re-render
@@ -41,7 +37,7 @@ class App extends React.Component {
     }
 
     if (!this.state.errorMessage && this.state.latitude) {
-      return <div>Latitude: {this.state.latitude}</div>;
+      return <SeasonDisplay latitude={this.state.latitude} />;
     }
 
     return <div>Loading...!</div>;

@@ -1,0 +1,16 @@
+.parent {
+  display: flex;
+  height: 300px; /* Or whatever */
+  width: 800px;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  border: 2px solid black;
+}
+
+.child {
+  width: 100px; /* Or whatever */
+  height: 100px; /* Or whatever */
+  background-color: grey;
+  color: magenta;
+  margin: auto; /* Magic! */
+}
