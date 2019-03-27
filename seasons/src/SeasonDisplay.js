@@ -1,3 +1,6 @@
+// Webpack sticks this into the html-file!
+import "./SeasonDisplay.css";
+
 import React from "react";
 
 const seasonConfig = {
@@ -25,10 +28,10 @@ const SeasonDisplay = props => {
 
   // const icon = season === "winter" ? "snowflake" : "sun";
   return (
-    <div>
-      <i className={`massive ${iconName} icon`} />
+    <div className={`season-display ${season}`}>
+      <i className={`icon-left huge ${iconName} icon`} />
       <h1>{text}</h1>
-      <i className={`massive ${iconName} icon`} />
+      <i className={`icon-right huge ${iconName} icon`} />
     </div>
   );
 };
