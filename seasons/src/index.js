@@ -26,13 +26,7 @@ class App extends React.Component {
   // componentDidUpdate(){
   //   console.log('My component was updated - it re-rendered');
   // }
-
-  // React says we have to define render()
-  render() {
-    // update state > immediate re-render
-
-    // Conditional Rendering, 3 scenarios
-
+  renderContent() {
     if (this.state.errorMessage && !this.state.latitude) {
       return <div>Error: {this.state.errorMessage}</div>;
     }
@@ -41,10 +35,18 @@ class App extends React.Component {
       return <SeasonDisplay latitude={this.state.latitude} />;
     }
 
-    return <Spinner />;
+    return <Spinner message="Please accept location request!" />;
   }
-}
+  // React says we have to define render()
+  render() {
+    return(
+    <div className="border red">{this.renderContent()}</div>
+    // update state > immediate re-render
+    )
+    // Conditional Rendering, 3 scenarios
+  }
 
+}
 // React.Component has methods
 
 // State
