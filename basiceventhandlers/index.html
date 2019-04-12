@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Event handlers</title>
+  </head>
+  <body>
+    <h1>Event handling 101</h1>
+    <button>Act once button</button>
+    <script>
+      window.addEventListener("click", () => {
+        console.log("Hallå där i consolen!");
+
+        let button = document.querySelector("button");
+        function once() {
+          console.log("Done");
+          button.removeEventListener("click", once);
+        }
+        button.addEventListener("click", once);
+      });
+    </script>
+  </body>
+</html>
